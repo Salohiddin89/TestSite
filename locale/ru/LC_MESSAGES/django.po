@@ -1,0 +1,154 @@
+msgid ""
+msgstr ""
+"Language: ru\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+# ===== GLOBAL =====
+msgid "Test tizimi"
+msgstr "Тестовая система"
+
+msgid "Asosiy"
+msgstr "Главная"
+
+msgid "Profil"
+msgstr "Профиль"
+
+msgid "Chiqish"
+msgstr "Выход"
+
+msgid "Kirish"
+msgstr "Вход"
+
+msgid "Ro‘yxatdan o‘tish"
+msgstr "Регистрация"
+
+msgid "Xush kelibsiz, %(name)s!"
+msgstr "Добро пожаловать, %(name)s!"
+
+# ===== HOME =====
+msgid "Test yechish uchun fanni tanlang"
+msgstr "Выберите предмет для прохождения теста"
+
+msgid "Boshlash"
+msgstr "Начать"
+
+msgid "Random test"
+msgstr "Случайный тест"
+
+msgid "Random testni boshlash"
+msgstr "Начать случайный тест"
+
+# ===== LOGIN =====
+msgid "Tizimga kirish"
+msgstr "Вход в систему"
+
+msgid "Foydalanuvchi nomi"
+msgstr "Имя пользователя"
+
+msgid "Parol"
+msgstr "Пароль"
+
+msgid "Akkauntingiz yo‘qmi?"
+msgstr "Нет аккаунта?"
+
+msgid "Ro‘yxatdan o‘ting"
+msgstr "Зарегистрируйтесь"
+
+msgid "Username yoki parol noto‘g‘ri!"
+msgstr "Неверное имя пользователя или пароль!"
+
+# ===== REGISTER =====
+msgid "Ro‘yxatdan o‘tish sahifasi"
+msgstr "Страница регистрации"
+
+msgid "Ism"
+msgstr "Имя"
+
+msgid "Familiya"
+msgstr "Фамилия"
+
+msgid "Email manzil"
+msgstr "Электронная почта"
+
+msgid "Parolni tasdiqlash"
+msgstr "Подтверждение пароля"
+
+msgid "Parollar bir xil emas!"
+msgstr "Пароли не совпадают!"
+
+msgid "Bu username band!"
+msgstr "Имя пользователя уже занято!"
+
+msgid "Ro‘yxatdan muvaffaqiyatli o‘tdingiz!"
+msgstr "Вы успешно зарегистрировались!"
+
+# ===== SUBJECT / TEST =====
+msgid "Testlar"
+msgstr "Тесты"
+
+msgid "Minimal ball"
+msgstr "Минимальный балл"
+
+msgid "Yopiq"
+msgstr "Закрыто"
+
+msgid "Qayta topshirish"
+msgstr "Пересдать"
+
+msgid "Testni boshlash"
+msgstr "Начать тест"
+
+# ===== TAKE TEST =====
+msgid "Savol"
+msgstr "Вопрос"
+
+msgid "Testni yakunlash"
+msgstr "Завершить тест"
+
+# ===== RESULT =====
+msgid "Test natijasi"
+msgstr "Результат теста"
+
+msgid "Sizning javobingiz"
+msgstr "Ваш ответ"
+
+msgid "To‘g‘ri javob"
+msgstr "Правильный ответ"
+
+msgid "Javoblar tahlili"
+msgstr "Анализ ответов"
+
+msgid "O‘tingiz"
+msgstr "Вы прошли"
+
+msgid "O‘tmadingiz"
+msgstr "Вы не прошли"
+
+# ===== PROFILE =====
+msgid "Topshirilgan testlar"
+msgstr "Пройденные тесты"
+
+msgid "Muvaffaqiyatli o‘tilgan"
+msgstr "Успешно сдано"
+
+msgid "O‘rtacha natija"
+msgstr "Средний результат"
+
+msgid "Testlar tarixi"
+msgstr "История тестов"
+
+msgid "Siz hali test topshirmagansiz"
+msgstr "Вы еще не проходили тесты"
+
+# ===== MESSAGES =====
+msgid "Bu test hali ochilmagan! Avval oldingi testdan o‘ting."
+msgstr "Этот тест еще не открыт. Сначала пройдите предыдущий тест."
+
+msgid "Test qayta topshirish uchun tayyor!"
+msgstr "Тест готов к повторной сдаче."
+
+msgid "Siz bu testdan allaqachon o‘tgansiz! Qayta topshirish mumkin emas."
+msgstr "Вы уже прошли этот тест. Повторная сдача невозможна."
+
+msgid "Random test uchun yetarli savollar mavjud emas!"
+msgstr "Недостаточно вопросов для случайного теста!"

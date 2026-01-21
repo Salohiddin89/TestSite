@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ test.name }}{% endblock %}
+
+{% block content %}
+<div class="test-taking-container">
+    <div class="test-header-section">
+        <a href="{% url 'subject_tests' test.subject.id %}" class="back-btn">← Orqaga</a>
+        <h1>{{ test.name }}</h1>
+        <div class="test-meta">
+            <span>{{ questions.count }} ta savol</span>
+        </div>
+    </div>
+
+    {% if has_previous %}
+    <div class="previous-result-banner">
+        <p>Siz bu testni avval topshirgansiz. Natijangizni ko'rishingiz yoki qayta topshirishingiz mumkin.</p>
+        <div class="banner-actions">
+            <button class="btn btn-warning" onclick="showRetakeConfirm()">Qayta topshirish</button>
+        </div>
+    </div>
+    {% endif %}
+
+    <form method="post" action="{% url 'submit_test' test.id %}" id="testForm" class="test-form">
+        {% csrf_token %}
+
+        <div class="questions-container">
+            {% for question in questions %}
+            <div class="question-card" data-question-id="{{ question.id }}">
+                <div class="question-header">
+                    <span class="question-number">Savol {{ forloop.counter }}</span>
+                </div>
+
+                <p class="question-text">{{ question.question_text }}</p>
+
+                <div class="answers-list">
+                    {% for answer in question.answers.all %}
+                    <label class="answer-option">
+                        <input type="radio" name="question_{{ question.id }}" value="{{ answer.id }}"
+                            data-question-id="{{ question.id }}">
+                        <span class="answer-label">
+                            <span class="answer-letter">{{ answer.order }})</span>
+                            <span class="answer-text">{{ answer.answer_text }}</span>
+                        </span>
+                        <span class="checkmark"></span>
+                    </label>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% if not has_previous %}
+        <div class="submit-section">
+            <button type="submit" class="btn btn-success btn-large" onclick="return confirmSubmit()">
+                Testni yakunlash
+            </button>
+        </div>
+        {% endif %}
+    </form>
+</div>
+
+<div id="retakeModal" class="modal">
+    <div class="modal-content">
+        <h2>Testni qayta topshirish</h2>
+        <p>Agar testni qayta topshirsangiz, oldingi natijangiz o'chib ketadi. Davom etasizmi?</p>
+        <div class="modal-actions">
+            <button class="btn btn-secondary" onclick="closeRetakeModal()">Yo'q</button>
+            <form method="post" action="{% url 'retake_test' test.id %}" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-warning">Ha, qayta topshiraman</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    const previousAnswers = {{ previous_answers| safe }};
+    const hasPrevious = {{ has_previous| lower }};
+</script>
+{% endblock %}

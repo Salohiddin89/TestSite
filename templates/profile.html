@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}
+{% trans "Profil" %}
+{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+
+    <!-- PROFILE HEADER -->
+    <div class="profile-header">
+        <div class="profile-avatar">
+            <span>
+                {{ profile.first_name|first }}{{ profile.last_name|first }}
+            </span>
+        </div>
+
+        <div class="profile-info">
+            <h1>{{ profile.first_name }} {{ profile.last_name }}</h1>
+            <p>@{{ user.username }}</p>
+            <p>{{ user.email }}</p>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="profile-stats">
+
+        <div class="stat-card">
+            <div class="stat-icon">📝</div>
+            <div class="stat-info">
+                <span class="stat-number">{{ total_attempts }}</span>
+                <span class="stat-label">
+                    {% trans "Topshirilgan testlar" %}
+                </span>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">✅</div>
+            <div class="stat-info">
+                <span class="stat-number">{{ passed_attempts }}</span>
+                <span class="stat-label">
+                    {% trans "Muvaffaqiyatli o‘tilgan" %}
+                </span>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">📊</div>
+            <div class="stat-info">
+                <span class="stat-number">
+                    {{ average_score|floatformat:1 }}%
+                </span>
+                <span class="stat-label">
+                    {% trans "O‘rtacha natija" %}
+                </span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ATTEMPTS -->
+    <div class="attempts-section">
+        <h2>{% trans "Testlar tarixi" %}</h2>
+
+        <div class="attempts-list">
+            {% for attempt in attempts %}
+            <a href="{% if attempt.is_random %}
+                        {% url 'random_test_result' attempt.id %}
+                      {% else %}
+                        {% url 'test_result' attempt.id %}
+                      {% endif %}" class="attempt-card">
+
+                <div class="attempt-info">
+                    <h3>
+                        {% if attempt.is_random %}
+                        {% trans "Random test" %}
+                        {% else %}
+                        {{ attempt.test.name }}
+                        {% endif %}
+                    </h3>
+
+                    <p>
+                        {% if attempt.is_random %}
+                        {{ attempt.completed_at|date:"d.m.Y H:i" }}
+                        {% else %}
+                        {{ attempt.test.subject.name }}
+                        {% endif %}
+                    </p>
+
+                    <span class="attempt-date">
+                        {{ attempt.completed_at|date:"d.m.Y H:i" }}
+                    </span>
+                </div>
+
+                <div class="attempt-score">
+                    <div class="score-badge
+                        {% if attempt.is_passed %}
+                            high
+                        {% else %}
+                            low
+                        {% endif %}
+                    ">
+                        {{ attempt.score }}/{{ attempt.total_questions }}
+                    </div>
+
+                    <span class="score-percentage">
+                        {{ attempt.score_percentage|floatformat:1 }}%
+                    </span>
+                </div>
+
+                <div class="attempt-arrow">→</div>
+            </a>
+
+            {% empty %}
+            <div class="empty-state">
+                <p>{% trans "Siz hali test topshirmagansiz" %}</p>
+
+                <a href="{% url 'home' %}" class="btn btn-primary">
+                    {% trans "Test yechishni boshlash" %}
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}

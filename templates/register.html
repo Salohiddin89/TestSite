@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}
+{% trans "Ro‘yxatdan o‘tish" %}
+{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+
+    <div class="auth-card">
+
+        <div class="auth-header">
+            <h1>{% trans "Ro‘yxatdan o‘tish" %}</h1>
+            <p>{% trans "Yangi akkaunt yarating" %}</p>
+        </div>
+
+        <form method="post" class="auth-form">
+            {% csrf_token %}
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="first_name">
+                        {% trans "Ism" %}
+                    </label>
+                    <input type="text" name="first_name" id="first_name" class="form-input"
+                        placeholder="{% trans 'Ismingiz' %}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="last_name">
+                        {% trans "Familiya" %}
+                    </label>
+                    <input type="text" name="last_name" id="last_name" class="form-input"
+                        placeholder="{% trans 'Familiyangiz' %}" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="username">
+                    {% trans "Foydalanuvchi nomi" %}
+                </label>
+                <input type="text" name="username" id="username" class="form-input"
+                    placeholder="{% trans 'Username tanlang' %}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">
+                    {% trans "Email manzil" %}
+                </label>
+                <input type="email" name="email" id="email" class="form-input"
+                    placeholder="{% trans 'Email manzilingiz' %}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">
+                    {% trans "Parol" %}
+                </label>
+                <input type="password" name="password" id="password" class="form-input"
+                    placeholder="{% trans 'Parol yarating' %}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password2">
+                    {% trans "Parolni tasdiqlang" %}
+                </label>
+                <input type="password" name="password2" id="password2" class="form-input"
+                    placeholder="{% trans 'Parolni qayta kiriting' %}" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+                {% trans "Ro‘yxatdan o‘tish" %}
+            </button>
+        </form>
+
+        <div class="auth-footer">
+            <p>
+                {% trans "Akkauntingiz bormi?" %}
+                <a href="{% url 'login' %}">
+                    {% trans "Kirish" %}
+                </a>
+            </p>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

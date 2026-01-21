@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}
+{% trans "Asosiy sahifa" %}
+{% endblock %}
+
+{% block content %}
+<div class="home-container">
+
+    <!-- WELCOME -->
+    <div class="welcome-section">
+        <h1>
+        {% blocktrans with name=user.username %}Xush kelibsiz, {{ name }}!{% endblocktrans %}
+        </h1>
+            
+        <p>
+            {% trans "Test yechish uchun fanni tanlang" %}
+        </p>
+    </div>
+
+    <!-- SUBJECTS -->
+    <div class="subjects-grid">
+        {% for subject in subjects %}
+        <a href="{% url 'subject_tests' subject.id %}" class="subject-card">
+
+            <div class="subject-image">
+                <img src="{{ subject.image.url }}" alt="{{ subject.name }}">
+            </div>
+
+            <div class="subject-info">
+                <h3>{{ subject.name }}</h3>
+
+                <p>
+                    {% blocktrans count test_count=subject.tests.count %}
+                    {{ test_count }} ta test
+                    {% plural %}
+                    {{ test_count }} ta test
+                    {% endblocktrans %}
+                </p>
+            </div>
+
+            <div class="subject-hover-effect">
+                <span>
+                    {% trans "Testlarni ko‘rish →" %}
+                </span>
+            </div>
+
+        </a>
+        {% empty %}
+        <div class="empty-state">
+            <p>
+                {% trans "Hozircha fanlar mavjud emas" %}
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

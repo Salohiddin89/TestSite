@@ -1,0 +1,154 @@
+msgid ""
+msgstr ""
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+# ===== GLOBAL =====
+msgid "Test tizimi"
+msgstr "Test system"
+
+msgid "Asosiy"
+msgstr "Home"
+
+msgid "Profil"
+msgstr "Profile"
+
+msgid "Chiqish"
+msgstr "Logout"
+
+msgid "Kirish"
+msgstr "Login"
+
+msgid "Ro‘yxatdan o‘tish"
+msgstr "Register"
+
+msgid "Xush kelibsiz, %(name)s!"
+msgstr "Welcome, %(name)s!"
+
+# ===== HOME =====
+msgid "Test yechish uchun fanni tanlang"
+msgstr "Select a subject to start the test"
+
+msgid "Boshlash"
+msgstr "Start"
+
+msgid "Random test"
+msgstr "Random test"
+
+msgid "Random testni boshlash"
+msgstr "Start random test"
+
+# ===== LOGIN =====
+msgid "Tizimga kirish"
+msgstr "Sign in"
+
+msgid "Foydalanuvchi nomi"
+msgstr "Username"
+
+msgid "Parol"
+msgstr "Password"
+
+msgid "Akkauntingiz yo‘qmi?"
+msgstr "Don't have an account?"
+
+msgid "Ro‘yxatdan o‘ting"
+msgstr "Register"
+
+msgid "Username yoki parol noto‘g‘ri!"
+msgstr "Invalid username or password!"
+
+# ===== REGISTER =====
+msgid "Ro‘yxatdan o‘tish sahifasi"
+msgstr "Registration page"
+
+msgid "Ism"
+msgstr "First name"
+
+msgid "Familiya"
+msgstr "Last name"
+
+msgid "Email manzil"
+msgstr "Email address"
+
+msgid "Parolni tasdiqlash"
+msgstr "Confirm password"
+
+msgid "Parollar bir xil emas!"
+msgstr "Passwords do not match!"
+
+msgid "Bu username band!"
+msgstr "This username is already taken!"
+
+msgid "Ro‘yxatdan muvaffaqiyatli o‘tdingiz!"
+msgstr "You have successfully registered!"
+
+# ===== SUBJECT / TEST =====
+msgid "Testlar"
+msgstr "Tests"
+
+msgid "Minimal ball"
+msgstr "Minimum score"
+
+msgid "Yopiq"
+msgstr "Locked"
+
+msgid "Qayta topshirish"
+msgstr "Retake"
+
+msgid "Testni boshlash"
+msgstr "Start test"
+
+# ===== TAKE TEST =====
+msgid "Savol"
+msgstr "Question"
+
+msgid "Testni yakunlash"
+msgstr "Finish test"
+
+# ===== RESULT =====
+msgid "Test natijasi"
+msgstr "Test result"
+
+msgid "Sizning javobingiz"
+msgstr "Your answer"
+
+msgid "To‘g‘ri javob"
+msgstr "Correct answer"
+
+msgid "Javoblar tahlili"
+msgstr "Answer review"
+
+msgid "O‘tingiz"
+msgstr "Passed"
+
+msgid "O‘tmadingiz"
+msgstr "Failed"
+
+# ===== PROFILE =====
+msgid "Topshirilgan testlar"
+msgstr "Completed tests"
+
+msgid "Muvaffaqiyatli o‘tilgan"
+msgstr "Passed"
+
+msgid "O‘rtacha natija"
+msgstr "Average score"
+
+msgid "Testlar tarixi"
+msgstr "Test history"
+
+msgid "Siz hali test topshirmagansiz"
+msgstr "You haven't taken any tests yet"
+
+# ===== MESSAGES =====
+msgid "Bu test hali ochilmagan! Avval oldingi testdan o‘ting."
+msgstr "This test is not unlocked yet. Please complete the previous test."
+
+msgid "Test qayta topshirish uchun tayyor!"
+msgstr "The test is ready to be retaken."
+
+msgid "Siz bu testdan allaqachon o‘tgansiz! Qayta topshirish mumkin emas."
+msgstr "You have already passed this test. Retake is not allowed."
+
+msgid "Random test uchun yetarli savollar mavjud emas!"
+msgstr "Not enough questions for the random test!"

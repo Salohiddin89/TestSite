@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}
+{% trans "Natija" %}
+{% endblock %}
+
+{% block content %}
+<div class="result-container">
+
+    <div class="result-header">
+        <h1>{% trans "Test natijasi" %}</h1>
+
+        <p>
+            {{ attempt.score }}/{{ attempt.total_questions }}
+            ({{ attempt.score_percentage|floatformat:1 }}%)
+        </p>
+    </div>
+
+    <div class="result-actions">
+        <a href="{% url 'subject_tests' attempt.test.subject.id %}" class="btn btn-secondary">
+            {% trans "Testlarga qaytish" %}
+        </a>
+
+        <a href="{% url 'home' %}" class="btn btn-primary">
+            {% trans "Asosiy sahifa" %}
+        </a>
+    </div>
+
+    <div class="answers-review">
+        <h2>{% trans "Javoblar tahlili" %}</h2>
+
+        {% for result in results %}
+        <div class="review-card {% if result.is_correct %}correct{% else %}incorrect{% endif %}">
+            <h4>
+                {% trans "Savol" %} {{ forloop.counter }}
+            </h4>
+
+            <p>{{ result.question.question_text }}</p>
+
+            {% for answer in result.all_answers %}
+            <div class="
+                {% if answer.is_correct %}correct-answer{% endif %}
+                {% if answer.id == result.selected_answer.id %}user-answer{% endif %}
+            ">
+                {{ answer.order }}) {{ answer.answer_text }}
+
+                {% if answer.id == result.selected_answer.id %}
+                — {% trans "Sizning javobingiz" %}
+                {% endif %}
+
+                {% if answer.is_correct %}
+                — {% trans "To‘g‘ri javob" %}
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

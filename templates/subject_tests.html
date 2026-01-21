@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}
+{{ subject.name }} — {% trans "Testlar" %}
+{% endblock %}
+
+{% block content %}
+<div class="tests-container">
+
+    <div class="page-header">
+        <a href="{% url 'home' %}" class="back-btn">
+            ← {% trans "Orqaga" %}
+        </a>
+
+        <h1>{{ subject.name }}</h1>
+        <p>{{ subject.description }}</p>
+
+        {% if can_take_random %}
+        <div class="random-test-section">
+            <a href="{% url 'take_random_test' subject.id %}" class="btn btn-random">
+                🎲 {% trans "Random test (20 savol)" %}
+            </a>
+            <p class="random-info">
+                {% trans "Ochilgan testlaringizdan tasodifiy savollar" %}
+            </p>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="tests-list">
+        {% for data in test_data %}
+        <div class="test-card
+            {% if data.is_unlocked %}unlocked{% else %}locked{% endif %}
+            {% if data.passed %}passed{% endif %}
+        ">
+
+            <div class="test-header">
+                <h3>{{ data.test.name }}</h3>
+                <span>{% trans "Test" %} {{ data.test.order }}</span>
+            </div>
+
+            <div class="test-info">
+                <p>
+                    📝 {{ data.test.questions.count }}
+                    {% trans "ta savol" %}
+                </p>
+
+                {% if data.attempted %}
+                <p>
+                    ✅ {{ data.score }}/{{ data.total }}
+                    ({{ data.percentage|floatformat:1 }}%)
+                </p>
+                {% endif %}
+
+                <p>
+                    🎯 {% trans "Minimal ball" %}:
+                    {{ data.test.min_score_to_unlock }}%
+                </p>
+            </div>
+
+            <div class="test-actions">
+                {% if data.is_unlocked %}
+                {% if data.attempted %}
+                {% if data.passed %}
+                <a href="{% url 'take_test' data.test.id %}" class="btn btn-success">
+                    {% trans "Natijani ko‘rish" %}
+                </a>
+                {% else %}
+                <a href="{% url 'take_test' data.test.id %}" class="btn btn-warning">
+                    {% trans "Qayta topshirish" %}
+                </a>
+                {% endif %}
+                {% else %}
+                <a href="{% url 'take_test' data.test.id %}" class="btn btn-primary">
+                    {% trans "Boshlash" %}
+                </a>
+                {% endif %}
+                {% else %}
+                <button class="btn btn-disabled" disabled>
+                    🔒 {% trans "Yopiq" %}
+                </button>
+                {% endif %}
+            </div>
+
+        </div>
+        {% empty %}
+        <p>{% trans "Bu fanda testlar yo‘q" %}</p>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

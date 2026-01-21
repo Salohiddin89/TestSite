@@ -1,0 +1,154 @@
+msgid ""
+msgstr ""
+"Language: uz\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+# ===== GLOBAL =====
+msgid "Test tizimi"
+msgstr ""
+
+msgid "Asosiy"
+msgstr ""
+
+msgid "Profil"
+msgstr ""
+
+msgid "Chiqish"
+msgstr ""
+
+msgid "Kirish"
+msgstr ""
+
+msgid "Ro‘yxatdan o‘tish"
+msgstr ""
+
+msgid "Xush kelibsiz, %(name)s!"
+msgstr ""
+
+# ===== HOME =====
+msgid "Test yechish uchun fanni tanlang"
+msgstr ""
+
+msgid "Boshlash"
+msgstr ""
+
+msgid "Random test"
+msgstr ""
+
+msgid "Random testni boshlash"
+msgstr ""
+
+# ===== LOGIN =====
+msgid "Tizimga kirish"
+msgstr ""
+
+msgid "Foydalanuvchi nomi"
+msgstr ""
+
+msgid "Parol"
+msgstr ""
+
+msgid "Akkauntingiz yo‘qmi?"
+msgstr ""
+
+msgid "Ro‘yxatdan o‘ting"
+msgstr ""
+
+msgid "Username yoki parol noto‘g‘ri!"
+msgstr ""
+
+# ===== REGISTER =====
+msgid "Ro‘yxatdan o‘tish sahifasi"
+msgstr ""
+
+msgid "Ism"
+msgstr ""
+
+msgid "Familiya"
+msgstr ""
+
+msgid "Email manzil"
+msgstr ""
+
+msgid "Parolni tasdiqlash"
+msgstr ""
+
+msgid "Parollar bir xil emas!"
+msgstr ""
+
+msgid "Bu username band!"
+msgstr ""
+
+msgid "Ro‘yxatdan muvaffaqiyatli o‘tdingiz!"
+msgstr ""
+
+# ===== SUBJECT / TEST =====
+msgid "Testlar"
+msgstr ""
+
+msgid "Minimal ball"
+msgstr ""
+
+msgid "Yopiq"
+msgstr ""
+
+msgid "Qayta topshirish"
+msgstr ""
+
+msgid "Testni boshlash"
+msgstr ""
+
+# ===== TAKE TEST =====
+msgid "Savol"
+msgstr ""
+
+msgid "Testni yakunlash"
+msgstr ""
+
+# ===== RESULT =====
+msgid "Test natijasi"
+msgstr ""
+
+msgid "Sizning javobingiz"
+msgstr ""
+
+msgid "To‘g‘ri javob"
+msgstr ""
+
+msgid "Javoblar tahlili"
+msgstr ""
+
+msgid "O‘tingiz"
+msgstr ""
+
+msgid "O‘tmadingiz"
+msgstr ""
+
+# ===== PROFILE =====
+msgid "Topshirilgan testlar"
+msgstr ""
+
+msgid "Muvaffaqiyatli o‘tilgan"
+msgstr ""
+
+msgid "O‘rtacha natija"
+msgstr ""
+
+msgid "Testlar tarixi"
+msgstr ""
+
+msgid "Siz hali test topshirmagansiz"
+msgstr ""
+
+# ===== MESSAGES =====
+msgid "Bu test hali ochilmagan! Avval oldingi testdan o‘ting."
+msgstr ""
+
+msgid "Test qayta topshirish uchun tayyor!"
+msgstr ""
+
+msgid "Siz bu testdan allaqachon o‘tgansiz! Qayta topshirish mumkin emas."
+msgstr ""
+
+msgid "Random test uchun yetarli savollar mavjud emas!"
+msgstr ""
